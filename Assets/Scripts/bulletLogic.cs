@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class bulletLogic : MonoBehaviour
 {
-    private float speed = 10f;
+    private float speed = 100f;
     void Start()
     {
         
@@ -11,6 +11,6 @@ public class bulletLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.forward * 100 * Time.deltaTime;
+        transform.position += Vector3.forward * speed * Time.deltaTime;
     }
 }
