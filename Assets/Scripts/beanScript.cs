@@ -4,9 +4,10 @@ public class beanScript : MonoBehaviour
 {
     public GameObject bullet;
     private float movementSpeed = 8;
+    public enemyScript enemy;
     void Start()
     {
-        
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<enemyScript>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class beanScript : MonoBehaviour
         directionOutput.x = Mathf.Clamp(directionOutput.x, -maxDistance, maxDistance);
         transform.position = directionOutput;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && enemy.beanIsAlive)
         {
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             Destroy(newBullet, 3);

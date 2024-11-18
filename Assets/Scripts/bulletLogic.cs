@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class bulletLogic : MonoBehaviour
 {
-    private float speed = 100f;
+    private float speed = 100;
     void Start()
     {
         

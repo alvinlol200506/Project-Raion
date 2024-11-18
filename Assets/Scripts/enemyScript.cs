@@ -1,11 +1,19 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+
 
 public class enemyScript : MonoBehaviour
 {
+    public LogicScript logic;
+    public int point = 0;
+    public LogicScript bean;
+    public bool beanIsAlive = true;
     private float movementSpeed = 10;
+
     void Start()
     {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         
     }
 
@@ -15,6 +23,8 @@ public class enemyScript : MonoBehaviour
 
         Vector3 movementDirection = new Vector3(0, 0, -1);
         transform.position += movementDirection * movementSpeed * Time.deltaTime;
+
+        Destroy(gameObject, 3.5f);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,8 +35,9 @@ public class enemyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            logic.gameOver();
+            beanIsAlive = false;
         }
+    
     }
-
 }
