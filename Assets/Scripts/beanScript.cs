@@ -5,9 +5,14 @@ public class beanScript : MonoBehaviour
     public GameObject bullet;
     private float movementSpeed = 8;
     public enemyScript enemy;
+    private Rigidbody rb;
+    public float jumpForce = 0.5f;
+    public CapsuleCollider col;
     void Start()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<enemyScript>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -29,7 +34,7 @@ public class beanScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && enemy.beanIsAlive)
         {
-            Vector3 jump = new Vector3(0, 1, 0);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         

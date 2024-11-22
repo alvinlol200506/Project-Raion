@@ -7,6 +7,7 @@ public class LogicScript : MonoBehaviour
     public GameObject gameOverScreen;
     public int playerScores = 0;
     public Text scoreText;
+    public Text scoreGameOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +33,7 @@ public class LogicScript : MonoBehaviour
     {
         playerScores = playerScores + scoreToAdd;
         scoreText.text = playerScores.ToString();
+        scoreGameOver.text = "Score: " + playerScores.ToString();
     }
     public void reduceScore(int scoreToReduce)
     {

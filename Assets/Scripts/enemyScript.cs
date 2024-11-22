@@ -45,7 +45,7 @@ public class enemyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Sensor"))
         {
-            logic.reduceScore(1);
+            logic.reduceScore(2);
         }
     
     }

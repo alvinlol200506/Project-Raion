@@ -7,7 +7,7 @@ public class gameManager : MonoBehaviour
     public GameObject heart1, heart2, heart3;
     public static int health;
     public Transform enemySpawnPoint;
-    float timer = 0.7f;
+    float timer = 0.6f;
     public enemyScript enemy;
     float currentTimer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
