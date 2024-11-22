@@ -27,6 +27,10 @@ public class beanScript : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             Destroy(newBullet, 3);
         }
+        if (Input.GetKeyDown(KeyCode.Space) && enemy.beanIsAlive)
+        {
+            Vector3 jump = new Vector3(0, 1, 0);
+        }
 
         
     }
