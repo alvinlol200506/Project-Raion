@@ -7,7 +7,7 @@ public class gameManager : MonoBehaviour
     public GameObject heart1, heart2, heart3;
     public static int health;
     public Transform enemySpawnPoint;
-    float timer = 1;
+    float timer = 0.7f;
     public enemyScript enemy;
     float currentTimer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,8 +25,8 @@ public class gameManager : MonoBehaviour
     {
         currentTimer = currentTimer + Time.deltaTime;
         if (currentTimer > timer) {
-            Vector3 spawnPoint = new Vector3(Random.Range(-7.776745f, 7.776745f),enemySpawnPoint.position.y, enemySpawnPoint.position.z );
-            Instantiate(enemy.gameObject, spawnPoint,Quaternion.identity);
+            Vector3 spawnPoint = new Vector3(Random.Range(-7.776745f, 7.776745f),enemySpawnPoint.position.y+1, enemySpawnPoint.position.z );
+            Instantiate(enemy.gameObject, spawnPoint,Quaternion.Euler(0, 180, 0));
             currentTimer = 0;
         }
 

@@ -32,6 +32,7 @@ public class enemyScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            logic.addScore(1);
         }
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -41,6 +42,10 @@ public class enemyScript : MonoBehaviour
                 logic.gameOver();
                 beanIsAlive = false;
             }
+        }
+        if (collision.gameObject.CompareTag("Sensor"))
+        {
+            logic.reduceScore(1);
         }
     
     }
