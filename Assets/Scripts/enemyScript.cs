@@ -8,13 +8,13 @@ public class enemyScript : MonoBehaviour
     public LogicScript logic;
     public int point = 0;
     public LogicScript bean;
-    public bool beanIsAlive = true;
+    public bool beanIsAlive;
     private float movementSpeed = 10;
 
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        
+        beanIsAlive = true;
     }
 
     // Update is called once per frame
@@ -32,11 +32,26 @@ public class enemyScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            logic.addScore(1);
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            logic.gameOver();
-            beanIsAlive = false;
+            gameManager.health -= 1;
+            Destroy(gameObject);
+            if (gameManager.health < 1)
+            {
+                logic.gameOver();
+                beanIsAlive = false;
+            }
+        }
+        if (collision.gameObject.CompareTag("Sensor"))
+        {
+            gameManager.health -= 1;
+            if (gameManager.health < 1)
+            {
+                logic.gameOver();
+                beanIsAlive = false;
+            }
         }
     
     }
