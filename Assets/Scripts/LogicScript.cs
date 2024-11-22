@@ -5,13 +5,14 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     public GameObject gameOverScreen;
-    public int playerScores = 0;
+    public float playerScores = 0;
     public Text scoreText;
     public Text scoreGameOver;
+    public GameObject crosshair;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        crosshair.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class LogicScript : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        crosshair.SetActive(false);
     }
 
     public void addScore(int scoreToAdd)
@@ -35,9 +37,6 @@ public class LogicScript : MonoBehaviour
         scoreText.text = playerScores.ToString();
         scoreGameOver.text = "Score: " + playerScores.ToString();
     }
-    public void reduceScore(int scoreToReduce)
-    {
-        playerScores = playerScores - scoreToReduce;
-        scoreText.text = playerScores.ToString();
-    }
+
+
 }

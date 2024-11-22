@@ -37,6 +37,7 @@ public class enemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             gameManager.health -= 1;
+            Destroy(gameObject);
             if (gameManager.health < 1)
             {
                 logic.gameOver();
@@ -45,7 +46,12 @@ public class enemyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Sensor"))
         {
-            logic.reduceScore(2);
+            gameManager.health -= 1;
+            if (gameManager.health < 1)
+            {
+                logic.gameOver();
+                beanIsAlive = false;
+            }
         }
     
     }
