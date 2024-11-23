@@ -45,6 +45,7 @@ public class LogicScript : MonoBehaviour
         Time.timeScale = 1;
         menuScreen.SetActive(false); 
         crosshair.SetActive(true);
+        
     }
     public static void Quit()
     {
