@@ -9,10 +9,13 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public Text scoreGameOver;
     public GameObject crosshair;
+    public GameObject menuScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        crosshair.SetActive(true);
+        crosshair.SetActive(false);
+        menuScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -37,6 +40,15 @@ public class LogicScript : MonoBehaviour
         scoreText.text = playerScores.ToString();
         scoreGameOver.text = "Score: " + playerScores.ToString();
     }
-
+    public void startGame()
+    {
+        Time.timeScale = 1;
+        menuScreen.SetActive(false); 
+        crosshair.SetActive(true);
+    }
+    public static void Quit()
+    {
+        Application.Quit();
+    }
 
 }

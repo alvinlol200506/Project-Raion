@@ -6,6 +6,7 @@ public class gameManager : MonoBehaviour
     public static int health;
     public Transform enemySpawnPoint;
     float timer = 0.7f;
+    public float timerDunia = 0;
     public enemyScript enemy;
     float currentTimer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,7 +16,6 @@ public class gameManager : MonoBehaviour
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
-        Time.timeScale = 1; // bisa gerak
     }
 
     // Update is called once per frame
@@ -26,6 +26,11 @@ public class gameManager : MonoBehaviour
             Vector3 spawnPoint = new Vector3(Random.Range(-7.776745f, 7.776745f),enemySpawnPoint.position.y+1, enemySpawnPoint.position.z );
             Instantiate(enemy.gameObject, spawnPoint,Quaternion.Euler(0, 180, 0));
             currentTimer = 0;
+        }
+        timerDunia = timerDunia + Time.deltaTime;
+        if (timerDunia > 10)
+        {
+            timer = 0.1f;
         }
 
         switch (health)
