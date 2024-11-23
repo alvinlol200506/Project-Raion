@@ -17,12 +17,17 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        health = 5;
+        health = 10;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
         heart4.gameObject.SetActive(true);
         heart5.gameObject.SetActive(true);
+        heart6.gameObject.SetActive(true);
+        heart7.gameObject.SetActive(true);
+        heart8.gameObject.SetActive(true);
+        heart9.gameObject.SetActive(true);
+        heart10.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -76,12 +81,77 @@ public class gameManager : MonoBehaviour
 
         switch (health)
         {
+            case 10:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                heart4.gameObject.SetActive(true);
+                heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(true);
+                heart7.gameObject.SetActive(true);
+                heart8.gameObject.SetActive(true);
+                heart9.gameObject.SetActive(true);
+                heart10.gameObject.SetActive(true);
+                break;
+            case 9:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                heart4.gameObject.SetActive(true);
+                heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(true);
+                heart7.gameObject.SetActive(true);
+                heart8.gameObject.SetActive(true);
+                heart9.gameObject.SetActive(true);
+                heart10.gameObject.SetActive(false);
+                break;
+            case 8:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                heart4.gameObject.SetActive(true);
+                heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(true);
+                heart7.gameObject.SetActive(true);
+                heart8.gameObject.SetActive(true);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
+                break;
+            case 7:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                heart4.gameObject.SetActive(true);
+                heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(true);
+                heart7.gameObject.SetActive(true);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
+                break;
+            case 6:
+                heart1.gameObject.SetActive(true);
+                heart2.gameObject.SetActive(true);
+                heart3.gameObject.SetActive(true);
+                heart4.gameObject.SetActive(true);
+                heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(true);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
+                break;
             case 5:
                 heart1.gameObject.SetActive(true);
                 heart2.gameObject.SetActive(true);
                 heart3.gameObject.SetActive(true);
                 heart4.gameObject.SetActive(true);
                 heart5.gameObject.SetActive(true);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 break;
             case 4:
                 heart1.gameObject.SetActive(true);
@@ -89,6 +159,11 @@ public class gameManager : MonoBehaviour
                 heart3.gameObject.SetActive(true);
                 heart4.gameObject.SetActive(true);
                 heart5.gameObject.SetActive(false);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 break;
             case 3:
                 heart1.gameObject.SetActive(true);
@@ -96,6 +171,11 @@ public class gameManager : MonoBehaviour
                 heart3.gameObject.SetActive(true);
                 heart4.gameObject.SetActive(false);
                 heart5.gameObject.SetActive(false);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 break;
             case 2:
                 heart1.gameObject.SetActive(true);
@@ -103,6 +183,11 @@ public class gameManager : MonoBehaviour
                 heart3.gameObject.SetActive(false);
                 heart4.gameObject.SetActive(false);
                 heart5.gameObject.SetActive(false);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 break;
             case 1:
                 heart1.gameObject.SetActive(true);
@@ -110,6 +195,11 @@ public class gameManager : MonoBehaviour
                 heart3.gameObject.SetActive(false);
                 heart4.gameObject.SetActive(false);
                 heart5.gameObject.SetActive(false);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 break;
             default:
                 heart1.gameObject.SetActive(false);
@@ -117,6 +207,11 @@ public class gameManager : MonoBehaviour
                 heart3.gameObject.SetActive(false);
                 heart4.gameObject.SetActive(false);
                 heart5.gameObject.SetActive(false);
+                heart6.gameObject.SetActive(false);
+                heart7.gameObject.SetActive(false);
+                heart8.gameObject.SetActive(false);
+                heart9.gameObject.SetActive(false);
+                heart10.gameObject.SetActive(false);
                 Time.timeScale = 0; // kalau gini playernya ndak bisa gerak
                 break;
         }
