@@ -1528,6 +1528,7 @@ MonoBehaviour:
   heart2: {fileID: 2131381313}
   heart3: {fileID: 808758533}
   enemySpawnPoint: {fileID: 719247797}
+  timerDunia: 0
   enemy: {fileID: 6119546899158575490, guid: d8187e2b69d18f947adc25ba7854b699, type: 3}
 --- !u!4 &682986823
 Transform:
@@ -2995,7 +2996,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 62
     m_FontStyle: 3
     m_BestFit: 0
@@ -3007,7 +3008,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Game Rudi Menembak
+  m_Text: 
 --- !u!222 &2000179789
 CanvasRenderer:
   m_ObjectHideFlags: 0
